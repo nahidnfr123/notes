@@ -1,0 +1,9 @@
+sudo systemctl daemon-reload
+
+sudo apt install php8.3 php8.3-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bcmath,intl,zip,opcache,json}
+
+sudo apt install php8.2 php8.2-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bcmath,intl,zip,opcache,json}
+
+sudo apt install php8.1 php8.1-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bcmath,intl,zip,opcache,json}
+
+sudo apt install php7.4 php7.4-{fpm,common,mysql,xml,json,mbstring,gd,curl,bcmath}
