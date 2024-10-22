@@ -1,0 +1,6 @@
+sudo chmod -R 777 ./*
+sudo chown -R $USER:$USER ./*
+
+sudo chmod -R 777 /var/www/
+
+sudo chown -R $USER:$USER /var/www/
