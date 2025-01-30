@@ -13,3 +13,10 @@ sudo apt install php8.2 php8.2-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bc
 sudo apt install php8.1 php8.1-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bcmath,intl,zip,opcache} -y
 
 sudo apt install php7.4 php7.4-{fpm,common,mysql,xml,json,mbstring,gd,curl,bcmath} -y
+
+
+
+# CREATE Alias For Command
+-> alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+-> alias pa='php artisan'
+-> alias pa-mf='php artisan migrate:fresh --seed'
