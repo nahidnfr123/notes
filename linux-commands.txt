@@ -4,3 +4,28 @@ sudo chown -R $USER:$USER ./*
 sudo chmod -R 777 /var/www/
 
 sudo chown -R $USER:$USER /var/www/
+
+
+
+nano ~/.bashrc      # or ~/.zshrc
+
+// create alias ...
+// usage: clear-start
+alias clear-start='php artisan optimize:clear && php artisan queue:clear && sudo systemctl reload supervisor >
+
+// shell function ...
+// usage: push-all "fixed bug in forecast request logic"
+push-all() {
+  if [ -z "$1" ]; then
+    echo "❌ Commit message required!"
+    echo "Usage: push-all \"your commit message\""
+    return 1
+  fi
+
+  git add .
+  git commit -m "$1"
+  git pull
+  git push
+}
+
+source ~/.bashrc    # or ~/.zshrc
