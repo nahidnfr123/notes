@@ -1,0 +1,55 @@
+# find user name
+whoami
+
+# prevent password prompt for specific command: open->
+sudo visudo
+
+# add line
+your_username ALL=(ALL) NOPASSWD: /bin/systemctl reload supervisor
+
+# open your terminal config bash or zsh
+nano ~/.bashrc      # or ~/.zshrc
+
+
+// creating alias ...
+# Add these lines:
+alias pa="php artisan" # usage pa migrate, pa ser, pa make:model etc
+
+# Clean start queue job process: usage pa-clr
+alias pa-clr='pa optimize:clear && pa queue:clear && sudo systemctl reload supervisor && : > storage/logs/laravel.log'
+# alias pa-clr='php artisan optimize:clear && php artisan queue:clear && sudo systemctl reload supervisor && : > storage/logs/laravel.log'
+
+# push to github: git add . && git commit -m "commit message" && git pull && git push
+# usage: push "commit message"
+push() {
+  if [ -z "$1" ]; then
+    echo "❌ Commit message required!"
+    echo "Usage: push \"your commit message\""
+    return 1
+  fi
+
+  git add .
+  git commit -m "$1"
+  git pull
+  git push
+}
+
+# pa() {
+#     if [ "$1" = "clr" ] || [ "$1" = "clear" ]; then
+#         php artisan optimize:clear
+#         php artisan queue:clear
+#         sudo systemctl reload supervisor
+#         : > storage/logs/laravel.log
+#     else
+#         php artisan "$@"
+#     fi
+# }
+
+
+
+
+
+
+
+
+
