@@ -46,6 +46,8 @@ push() {
 # }
 
 
+source ~/.bashrc    # or ~/.zshrc
+
 
 
 
