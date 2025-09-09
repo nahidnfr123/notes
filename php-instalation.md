@@ -16,6 +16,8 @@ sudo apt install php8.1 php8.1-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bc
 sudo apt install php7.4 php7.4-{fpm,common,mysql,xml,json,mbstring,gd,curl,bcmath} -y
 
 
+composer global require laravel/installer
+
 # Laravel Command not found fix:
 sudo nano ~/.bashrc
 # paste:
