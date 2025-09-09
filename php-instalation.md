@@ -37,6 +37,9 @@ sudo apt install php-redis -y
 composer require predis/predis
 
 # env
+# If you want Predis (default with redis-server):
+REDIS_CLIENT=predis
+# If you want PhpRedis (with php-redis extension i.e. fast):
 REDIS_CLIENT=phpredis
 # ***
 
