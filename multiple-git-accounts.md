@@ -25,7 +25,7 @@ ssh-add ~/.ssh/id_ed25519_work
 ssh-add -l
 
 
-# ~/.ssh/config
+# create ~/.ssh/config
 
 # Personal GitHub
 Host github.com-personal
