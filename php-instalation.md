@@ -18,6 +18,10 @@ sudo apt install php8.1 php8.1-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bc
 sudo apt install php7.4 php7.4-{fpm,common,mysql,xml,json,mbstring,gd,curl,bcmath} -y
 
 
+
+
+
+
 composer global require laravel/installer
 
 # Laravel Command not found fix:
@@ -25,6 +29,10 @@ sudo nano ~/.bashrc
 # paste:
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 source ~/.bashrc
+
+
+
+
 
 # REDIS SETUP
 # Redis
@@ -42,6 +50,9 @@ REDIS_CLIENT=predis
 # If you want PhpRedis (with php-redis extension i.e. fast):
 REDIS_CLIENT=phpredis
 # ***
+
+
+
 
 
 # CREATE Alias For Command
