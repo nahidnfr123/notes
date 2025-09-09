@@ -1,3 +1,6 @@
+# install git
+sudo apt update && sudo apt install git
+
 # Personal account
 ssh-keygen -t ed25519 -C "your_personal_email@example.com" -f ~/.ssh/id_ed25519_personal
 
