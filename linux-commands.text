@@ -1,5 +1,7 @@
 sudo chmod -R 777 ./*
 sudo chown -R $USER:$USER ./*
+sudo chown -R $(whoami):$(whoami) ./*
+
 
 sudo chmod -R 777 /var/www/
 
