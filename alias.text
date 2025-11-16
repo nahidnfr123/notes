@@ -34,6 +34,8 @@ push() {
   git push
 }
 
+alias sail="./vendor/bin/sail"
+
 # pa() {
 #     if [ "$1" = "clr" ] || [ "$1" = "clear" ]; then
 #         php artisan optimize:clear
