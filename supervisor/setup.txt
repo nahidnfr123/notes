@@ -1,0 +1,16 @@
+sudo apt update && sudo apt install supervisor
+
+sudo mkdir -p /var/www/log
+sudo chown -R $USER_NAME:$USER_NAME /var/www/log
+sudo chmod -R 777 /var/www/log
+
+sudo nano /etc/supervisor/conf.d/sc-queue.conf
+sudo nano /etc/supervisor/conf.d/sc-scheduler.conf
+
+
+
+sudo supervisorctl reread
+sudo supervisorctl update
+
+sudo supervisorctl start sc-queue:*
+sudo supervisorctl start sc-scheduler
