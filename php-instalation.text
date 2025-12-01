@@ -61,3 +61,19 @@ REDIS_CLIENT=phpredis
 -> alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 -> alias pa='php artisan'
 -> alias pa-mf='php artisan migrate:fresh --seed'
+
+
+
+
+# Node js
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+nvm install node && node install 24  && node install 22
+
+nvm ls
