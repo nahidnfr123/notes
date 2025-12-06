@@ -1,0 +1,29 @@
+# pre commit 
+
+nano .git/hooks/pre-commit
+
+chmod +x .git/hooks/pre-commit
+
+
+# pest thic in pre-commit it automatically runs pint on commit
+#!/bin/sh
+
+echo "🔧 Running Laravel Pint (auto-fix)..."
+./vendor/bin/pint
+
+echo "➕ Restaging updated files..."
+git add .
+
+echo "🔍 Running Laravel Pint (check mode)..."
+./vendor/bin/pint --test
+STATUS=$?
+
+if [ $STATUS -ne 0 ]; then
+    echo ""
+    echo "❌ Pint found formatting issues even after auto-fix."
+    echo "Commit aborted."
+    exit 1
+fi
+
+echo "✅ Pint auto-fix, restaging, and check passed."
+exit 0
