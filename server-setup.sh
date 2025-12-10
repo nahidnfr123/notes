@@ -7,8 +7,9 @@ sudo systemctl daemon-reload
 sudo apt install -y software-properties-common
 sudo add-apt-repository -y ppa:ondrej/php
 
-sudo apt install unzip curl -y
+sudo apt install git unzip curl -y
 
+# Install NGINX
 sudo apt install nginx
 sudo ufw allow 'Nginx HTTP'
 
@@ -34,11 +35,14 @@ sudo mv composer.phar /usr/local/bin/composer
 # Laravel Installer
 composer global require laravel/installer
 
-# Add Composer to PATH
+# Add Composer to PATH For Laravel
 echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 source ~/.bashrc
 
+# Install Supervisor
 sudo apt install supervisor
+# Install Mysql
+sudo apt install mysql-server
 
 # Redis Setup
 sudo apt install redis-server -y
@@ -51,9 +55,6 @@ echo "alias sail='sh \$([ -f sail ] && echo sail || echo vendor/bin/sail)'" >> ~
 echo "alias pa='php artisan'" >> ~/.bashrc
 echo "alias pa-mf='php artisan migrate:fresh --seed'" >> ~/.bashrc
 source ~/.bashrc
-
-sudo apt install mysql-server
-
 
 # Node js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
