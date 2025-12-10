@@ -37,6 +37,8 @@ composer global require laravel/installer
 echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 source ~/.bashrc
 
+sudo apt install supervisor
+
 # Redis Setup
 sudo apt install redis-server -y
 sudo systemctl enable redis-server
