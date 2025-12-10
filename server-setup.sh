@@ -10,6 +10,7 @@ sudo add-apt-repository -y ppa:ondrej/php
 sudo apt install unzip curl -y
 
 sudo apt install nginx
+sudo ufw allow 'Nginx HTTP'
 
 sudo apt install php8.5 php8.5-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bcmath,intl,zip} -y
 
@@ -50,6 +51,8 @@ echo "alias sail='sh \$([ -f sail ] && echo sail || echo vendor/bin/sail)'" >> ~
 echo "alias pa='php artisan'" >> ~/.bashrc
 echo "alias pa-mf='php artisan migrate:fresh --seed'" >> ~/.bashrc
 source ~/.bashrc
+
+sudo apt install mysql-server
 
 
 # Node js
