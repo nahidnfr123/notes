@@ -9,6 +9,8 @@ sudo add-apt-repository -y ppa:ondrej/php
 
 sudo apt install unzip curl -y
 
+sudo apt install nginx
+
 sudo apt install php8.5 php8.5-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bcmath,intl,zip} -y
 
 sudo apt install php8.4 php8.4-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bcmath,intl,zip,opcache} -y
