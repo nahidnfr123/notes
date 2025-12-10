@@ -50,3 +50,12 @@ echo "alias sail='sh \$([ -f sail ] && echo sail || echo vendor/bin/sail)'" >> ~
 echo "alias pa='php artisan'" >> ~/.bashrc
 echo "alias pa-mf='php artisan migrate:fresh --seed'" >> ~/.bashrc
 source ~/.bashrc
+
+
+# Node js
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install node && node install 24  && node install 22
+
