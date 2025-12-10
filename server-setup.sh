@@ -21,6 +21,13 @@ sudo apt install php8.1 php8.1-{fpm,mysql,common,mbstring,xml,gd,cli,bz2,curl,bc
 
 sudo apt install php7.4 php7.4-{fpm,common,mysql,xml,json,mbstring,gd,curl,bcmath} -y
 
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'c8b085408188070d5f52bcfe4ecfbee5f727afa458b2573b8eaaf77b3419b0bf2768dc67c86944da1544f06fa544fd47') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+
+sudo mv composer.phar /usr/local/bin/composer
+
 # Laravel Installer
 composer global require laravel/installer
 
