@@ -31,7 +31,14 @@ sudo update-alternatives --config php
 
 
 # Update Php ini For All php versions
-for v in /etc/php/*; do sed -i 's/^max_execution_time.*/max_execution_time = 300/' "$v/fpm/php.ini"; sed -i 's/^max_input_time.*/max_input_time = 300/' "$v/fpm/php.ini"; sed -i 's/^memory_limit.*/memory_limit = 512M/' "$v/fpm/php.ini"; systemctl restart php$(basename "$v")-fpm 2>/dev/null; done
+for v in /etc/php/*; do
+    sed -i 's/^max_execution_time.*/max_execution_time = 300/' "$v/fpm/php.ini"
+    sed -i 's/^max_input_time.*/max_input_time = 300/' "$v/fpm/php.ini"
+    sed -i 's/^memory_limit.*/memory_limit = 512M/' "$v/fpm/php.ini"
+    sed -i 's/^upload_max_filesize.*/upload_max_filesize = 200M/' "$v/fpm/php.ini"
+    sed -i 's/^post_max_size.*/post_max_size = 200M/' "$v/fpm/php.ini"
+ systemctl restart php$(basename "$v")-fpm 2>/dev/null
+done
 
 #This sets:
 #upload_max_filesize = 20M
