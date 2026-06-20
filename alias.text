@@ -47,6 +47,18 @@ alias sail="./vendor/bin/sail"
 #     fi
 # }
 
+# create alias "supervisor refresh" : this command will update the newly added supervisor config and restrart all.
+supervisor() {
+    if [ "$1" = "refresh" ]; then
+        sudo supervisorctl reread
+        sudo supervisorctl update
+        sudo supervisorctl restart all
+    else
+        command supervisor "$@"
+    fi
+}
+
+
 
 source ~/.zshrc  # or ~/.bashrc
 
