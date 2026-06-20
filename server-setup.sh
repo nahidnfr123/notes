@@ -41,6 +41,20 @@ source ~/.bashrc
 
 # Install Supervisor
 sudo apt install supervisor
+
+# create alias "supervisor refresh" : this command will update the newly added supervisor config and restrart all.
+echo '
+supervisor() {
+    if [ "$1" = "refresh" ]; then
+        sudo supervisorctl reread
+        sudo supervisorctl update
+        sudo supervisorctl restart all
+    else
+        command supervisor "$@"
+    fi
+}
+' >> ~/.bashrc && source ~/.bashrc
+
 # Install Mysql
 sudo apt install mysql-server
 
